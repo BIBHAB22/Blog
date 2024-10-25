@@ -49,7 +49,7 @@ const Navbar = () => {
       />
       <div className="container mx-auto flex justify-between items-center">
         <Link href={"/"}>
-          <div className="text-2xl font-bold">Cofiene</div>
+          <div className="text-2xl font-bold">Blogarithms</div>
         </Link>
         <div className="hidden md:flex space-x-4 items-center">
         <Link
@@ -130,7 +130,7 @@ const Navbar = () => {
             </SheetTrigger>
             <SheetContent>
               <SheetHeader>
-                <SheetTitle className="font-bold my-4">Cofiene</SheetTitle>
+                <SheetTitle className="font-bold my-4">Blogarithms</SheetTitle>
                 <SheetDescription>
                   <div className="flex flex-col gap-6">
                   <Link href="/"> Home</Link>
