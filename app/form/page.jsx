@@ -2,6 +2,8 @@
 import React, { useState } from 'react';
 import { db } from '@/firebaseConfig'; // Ensure you have configured Firebase
 import { collection, addDoc, Timestamp } from 'firebase/firestore';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const BlogSubmissionForm = () => {
     const [title, setTitle] = useState('');
@@ -27,7 +29,7 @@ const BlogSubmissionForm = () => {
 
         try {
             const docRef = await addDoc(collection(db, 'blogs'), blogData);
-            alert('Blog submitted successfully');
+            toast.success('Blog submitted successfully!');
             // Clear the form after successful submission
             setTitle('');
             setAuthor(''); // Corrected: Clear author field
@@ -38,7 +40,7 @@ const BlogSubmissionForm = () => {
             setDate(''); // clear date field
         } catch (error) {
             console.error('Error submitting the blog', error);
-            alert('Failed to submit the blog');
+            toast.error('Failed to submit the blog');
         }
     };
 
@@ -134,6 +136,7 @@ const BlogSubmissionForm = () => {
                     Submit Blog
                 </button>
             </form>
+            <ToastContainer />
         </div>
     );
 };
